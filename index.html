@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XMEGA — Final Year Project Services | Turning Ideas Into Successful Projects</title>
+<meta name="description" content="XMEGA builds and sells working final year projects for engineering students — AI/ML, IoT, Web & App Dev, Cybersecurity and Robotics. Full documentation, viva coaching, and on-time delivery. Call 9049048982.">
+<meta name="keywords" content="final year project, buy college project, engineering project help, IEEE project, IoT project, AI ML project, project synopsis, project report, XMEGA">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.xmegaprojects.in/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="XMEGA — Turning Ideas Into Successful Projects">
+<meta property="og:description" content="End-to-end final year project services for engineering students — build, document, and defend your project with expert mentors.">
+<meta property="og:url" content="https://www.xmegaprojects.in/">
+<meta property="og:site_name" content="XMEGA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="XMEGA — Turning Ideas Into Successful Projects">
+<meta name="twitter:description" content="Buy ready-made final year projects for engineering students — AI/ML, IoT, Web, Cybersecurity, Robotics.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "XMEGA",
+  "description": "XMEGA sells and builds final year projects for engineering students — AI/ML, IoT, Web & App Development, Cybersecurity and Robotics.",
+  "telephone": ["+91-9049048982", "+91-9021001481"],
+  "areaServed": "IN",
+  "slogan": "Turning Ideas Into Successful Projects"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-alt:#F3F6FB;
+    --surface:rgba(15,23,42,0.035);
+    --surface-strong:rgba(15,23,42,0.065);
+    --border:rgba(15,23,42,0.10);
+    --border-strong:rgba(15,23,42,0.20);
+    --text:#0F1729;
+    --text-muted:#4B5670;
+    --text-dim:#69738D;
+    --blue:#2F6FED;
+    --blue-bright:#1D4ED8;
+    --yellow:#F5B800;
+    --yellow-bright:#FFD34D;
+    --yellow-deep:#966400;
+    --radius:16px;
+    --maxw:1240px;
+    --font-display:'Space Grotesk',sans-serif;
+    --font-body:'Inter',sans-serif;
+    --font-mono:'JetBrains Mono',monospace;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+
+  ::selection{background:var(--blue);color:#fff;}
+
+  /* Background layers */
+  .bg-fixed{
+    position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(ellipse 900px 500px at 15% -5%, rgba(47,111,237,0.10), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 90% 15%, rgba(245,184,0,0.08), transparent 55%),
+      var(--bg);
+  }
+  .bg-grid{
+    position:fixed;inset:0;z-index:-1;
+    background-image:
+      linear-gradient(rgba(15,23,42,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,23,42,0.05) 1px, transparent 1px);
+    background-size:64px 64px;
+    mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 90%);
+    opacity:.6;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  section{position:relative;padding:120px 0;}
+  @media(max-width:768px){section{padding:80px 0;}}
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--font-mono);
+    font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--yellow-deep);
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:'';width:18px;height:1px;background:var(--yellow-deep);
+  }
+
+  h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;letter-spacing:-0.02em;color:var(--text);}
+  h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px;}
+  .section-head{max-width:640px;margin-bottom:56px;}
+  .section-head p{color:var(--text-muted);font-size:17px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  /* ===== Circuit trace rail (signature element) ===== */
+  .trace-rail{
+    position:fixed;left:38px;top:0;bottom:0;width:2px;z-index:5;
+    pointer-events:none;
+  }
+  .trace-rail .line{
+    position:absolute;left:0;top:0;width:2px;height:100%;
+    background:linear-gradient(to bottom, transparent, rgba(15,23,42,0.12) 6%, rgba(15,23,42,0.12) 94%, transparent);
+  }
+  .trace-rail .progress{
+    position:absolute;left:0;top:0;width:2px;height:0%;
+    background:linear-gradient(to bottom, var(--blue), var(--yellow));
+    box-shadow:0 0 12px rgba(92,147,255,0.6);
+    transition:height .1s linear;
+  }
+  @media(max-width:1180px){.trace-rail{display:none;}}
+
+  /* ===== Nav ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:18px 0;
+    transition:background .3s ease, border-color .3s ease, padding .3s ease;
+    border-bottom:1px solid transparent;
+  }
+  header.scrolled{
+    background:rgba(255,255,255,0.78);
+    backdrop-filter:blur(16px) saturate(140%);
+    -webkit-backdrop-filter:blur(16px) saturate(140%);
+    border-bottom:1px solid var(--border);
+    padding:12px 0;
+    box-shadow:0 1px 0 rgba(15,23,42,0.04);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .logo{display:flex;align-items:center;gap:10px;font-family:var(--font-display);font-weight:700;font-size:21px;color:var(--text);}
+  .logo .dot{width:9px;height:9px;border-radius:2px;background:var(--yellow);box-shadow:0 0 10px rgba(245,184,0,.7);}
+  .nav-links{display:flex;gap:32px;font-size:14.5px;color:var(--text-muted);}
+  .nav-links a{transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .phone-pill{
+    display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:13px;color:var(--text-muted);
+    border:1px solid var(--border);padding:8px 14px;border-radius:100px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:12px 22px;border-radius:10px;font-weight:600;font-size:14.5px;
+    border:1px solid transparent;transition:transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 24px rgba(47,111,237,0.35);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(47,111,237,0.5);}
+  .btn-ghost{background:var(--surface);border-color:var(--border);color:var(--text);}
+  .btn-ghost:hover{border-color:var(--border-strong);background:var(--surface-strong);transform:translateY(-2px);}
+  .btn-yellow{background:var(--yellow);color:#1a1200;box-shadow:0 8px 24px rgba(245,184,0,0.3);}
+  .btn-yellow:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(245,184,0,0.45);}
+  .menu-toggle{display:none;background:none;border:1px solid var(--border);border-radius:8px;padding:8px;color:var(--text);}
+  @media(max-width:920px){
+    .nav-links,.phone-pill{display:none;}
+    .menu-toggle{display:flex;}
+  }
+  .mobile-menu{
+    display:none;position:fixed;top:64px;left:16px;right:16px;z-index:99;
+    background:rgba(255,255,255,0.98);backdrop-filter:blur(20px);
+    box-shadow:0 20px 40px rgba(15,23,42,0.12);
+    border:1px solid var(--border);border-radius:16px;padding:20px;
+    flex-direction:column;gap:4px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 8px;border-bottom:1px solid var(--border);font-size:15px;}
+  .mobile-menu a:last-child{border-bottom:none;}
+
+  /* ===== Reveal animation (Framer-Motion style) ===== */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,.84,.44,1), transform .7s cubic-bezier(.16,.84,.44,1);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  .stagger > *{transition-delay:calc(var(--i,0) * 90ms);}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1!important;transform:none!important;transition:none!important;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ===== Hero ===== */
+  .hero{padding-top:180px;padding-bottom:100px;position:relative;}
+  .hero-inner{max-width:780px;}
+  .hero h1{font-size:clamp(38px,6.4vw,68px);line-height:1.05;margin-bottom:22px;}
+  .hero h1 .hl{color:var(--blue-bright);}
+  .hero h1 .hl2{color:var(--yellow-deep);}
+  .hero p.lead{font-size:18px;color:var(--text-muted);max-width:560px;margin-bottom:36px;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:64px;}
+  .hero-refer-badge{
+    display:inline-flex;align-items:center;gap:10px;
+    border:1px solid var(--border-strong);border-radius:100px;
+    padding:8px 16px 8px 8px;margin-bottom:24px;
+    background:linear-gradient(90deg, rgba(47,111,237,0.07), rgba(245,184,0,0.07));
+    font-size:13.5px;color:var(--text);font-weight:500;
+    transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+  }
+  .hero-refer-badge:hover{transform:translateY(-1px);border-color:var(--blue-bright);box-shadow:0 8px 20px rgba(47,111,237,0.15);}
+  .hero-refer-badge .tag{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;
+    background:var(--yellow);color:#1a1200;padding:4px 10px;border-radius:100px;font-weight:600;
+  }
+  .hero-refer-badge .arrow{color:var(--blue-bright);font-weight:600;}
+
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+  }
+  .hero-stats div{background:var(--bg-alt);padding:22px 20px;}
+  .hero-stats .num{font-family:var(--font-mono);font-size:26px;font-weight:600;color:var(--text);}
+  .hero-stats .num .accent{color:var(--yellow-deep);}
+  .hero-stats .label{font-size:12.5px;color:var(--text-dim);margin-top:4px;letter-spacing:.02em;}
+  @media(max-width:700px){.hero-stats{grid-template-columns:repeat(2,1fr);} .hero{padding-top:140px;}}
+
+  .hero-float{
+    position:absolute;right:28px;top:190px;width:270px;
+    font-family:var(--font-mono);font-size:12px;color:var(--text-muted);
+    border:1px solid var(--border);border-radius:12px;padding:16px;
+    background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);
+    box-shadow:0 14px 30px rgba(15,23,42,0.08);
+    animation:float 6s ease-in-out infinite;
+  }
+  .hero-float .top{display:flex;justify-content:space-between;color:var(--yellow-deep);margin-bottom:8px;}
+  .hero-float .bar{height:4px;background:var(--border);border-radius:4px;overflow:hidden;margin-top:10px;}
+  .hero-float .bar span{display:block;height:100%;width:92%;background:linear-gradient(90deg,var(--blue),var(--yellow));}
+  @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+  @media(max-width:1180px){.hero-float{display:none;}}
+
+  /* ===== Glass card base ===== */
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 1px 2px rgba(15,23,42,0.04), 0 14px 30px rgba(15,23,42,0.05);
+    transition:transform .35s cubic-bezier(.16,.84,.44,1), border-color .35s ease, background .35s ease, box-shadow .35s ease;
+  }
+  .card:hover{transform:translateY(-6px);border-color:var(--border-strong);background:var(--surface-strong);box-shadow:0 20px 40px rgba(15,23,42,0.12);}
+
+  /* ===== Why choose ===== */
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.grid-3{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.grid-3{grid-template-columns:1fr;}}
+  .feature-card{padding:30px 26px;}
+  .icon-box{
+    width:46px;height:46px;border-radius:11px;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg, rgba(47,111,237,0.18), rgba(245,184,0,0.12));
+    border:1px solid var(--border);margin-bottom:20px;
+  }
+  .icon-box svg{width:22px;height:22px;stroke:var(--blue-bright);}
+  .feature-card h3{font-size:18px;margin-bottom:10px;color:var(--text);}
+  .feature-card p{color:var(--text-muted);font-size:14.5px;}
+
+  /* ===== Categories (datasheet cards) ===== */
+  .grid-cat{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.grid-cat{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.grid-cat{grid-template-columns:1fr;}}
+  .cat-card{padding:26px;position:relative;overflow:hidden;}
+  .cat-card::before{
+    content:'';position:absolute;top:0;left:0;width:26px;height:26px;
+    border-top:2px solid var(--yellow);border-left:2px solid var(--yellow);
+    border-radius:12px 0 0 0;opacity:.7;
+  }
+  .cat-card .code{font-family:var(--font-mono);font-size:11.5px;color:var(--yellow-deep);letter-spacing:.08em;}
+  .cat-card h3{font-size:19px;margin:10px 0 12px;}
+  .cat-card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+  .tag{
+    font-family:var(--font-mono);font-size:11px;color:var(--text-muted);
+    border:1px solid var(--border);padding:4px 9px;border-radius:6px;
+  }
+
+  /* ===== Refer & Earn ===== */
+  .refer-panel{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:0;
+    border-radius:24px;overflow:hidden;border:1px solid var(--border);
+    background:linear-gradient(135deg, rgba(47,111,237,0.10), rgba(245,184,0,0.05));
+  }
+  .refer-left{padding:56px;}
+  .refer-left h2{margin-bottom:14px;}
+  .refer-left p{color:var(--text-muted);margin-bottom:28px;max-width:440px;}
+  .refer-amount{
+    font-family:var(--font-mono);font-size:52px;color:var(--yellow-deep);font-weight:600;
+    display:flex;align-items:baseline;gap:10px;margin-bottom:28px;
+  }
+  .refer-amount span{font-size:15px;color:var(--text-muted);font-family:var(--font-body);}
+  .refer-right{padding:56px;border-left:1px solid var(--border);display:flex;flex-direction:column;gap:22px;justify-content:center;}
+  @media(max-width:900px){.refer-panel{grid-template-columns:1fr;} .refer-right{border-left:none;border-top:1px solid var(--border);}}
+  @media(max-width:600px){.refer-left,.refer-right{padding:34px 24px;}}
+  .step-row{display:flex;gap:16px;align-items:flex-start;}
+  .step-num{
+    font-family:var(--font-mono);font-size:13px;color:var(--bg);background:var(--blue-bright);
+    width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:600;
+  }
+  .step-row h4{font-size:15.5px;color:var(--text);margin-bottom:4px;}
+  .step-row p{font-size:13.5px;color:var(--text-muted);}
+
+  /* ===== Suggestion service ===== */
+  .suggest-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  @media(max-width:900px){.suggest-wrap{grid-template-columns:1fr;gap:32px;}}
+  .suggest-card{padding:34px;}
+  .suggest-form-mini{display:flex;flex-direction:column;gap:14px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .chip{
+    font-family:var(--font-mono);font-size:12px;padding:7px 12px;border-radius:8px;
+    border:1px solid var(--border);color:var(--text-muted);
+  }
+  .chip.active{border-color:var(--blue-bright);color:var(--blue-bright);background:rgba(47,111,237,0.1);}
+  .mini-out{
+    margin-top:6px;border:1px dashed var(--border-strong);border-radius:10px;padding:16px;
+    font-family:var(--font-mono);font-size:12.5px;color:var(--text-muted);
+  }
+  .mini-out b{color:var(--yellow-deep);}
+
+  /* ===== Featured Projects ===== */
+  .proj-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:980px){.proj-scroll{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.proj-scroll{grid-template-columns:1fr;}}
+  .proj-card{padding:0;overflow:hidden;}
+  .proj-thumb{
+    height:140px;position:relative;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(47,111,237,0.35), transparent 60%),
+      radial-gradient(circle at 80% 80%, rgba(245,184,0,0.25), transparent 55%),
+      #0d1424;
+    border-bottom:1px solid var(--border);
+  }
+  .proj-thumb .code{
+    position:absolute;top:14px;left:16px;font-family:var(--font-mono);font-size:11px;
+    color:var(--yellow);background:rgba(0,0,0,0.35);padding:4px 8px;border-radius:6px;
+  }
+  .proj-body{padding:22px;}
+  .proj-body .domain{font-family:var(--font-mono);font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;}
+  .proj-body h3{font-size:16.5px;margin-bottom:12px;line-height:1.35;}
+  .proj-body .tags{display:flex;flex-wrap:wrap;gap:6px;}
+
+  /* ===== Testimonials ===== */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media(max-width:900px){.test-grid{grid-template-columns:1fr;}}
+  .test-card{padding:28px;}
+  .test-card .quote{color:#dfe4f2;font-size:15px;line-height:1.7;margin-bottom:22px;}
+  .test-who{display:flex;align-items:center;gap:12px;}
+  .avatar{
+    width:38px;height:38px;border-radius:10px;
+    background:linear-gradient(135deg,var(--blue),var(--yellow));
+    display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;color:#0a0e18;font-size:14px;
+  }
+  .test-who .name{font-size:14px;color:var(--text);font-weight:600;}
+  .test-who .role{font-size:12.5px;color:var(--text-dim);}
+
+  /* ===== FAQ ===== */
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .faq-item{border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden;}
+  .faq-q{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:20px 24px;font-weight:600;font-size:15.5px;color:var(--text);
+  }
+  .faq-q .plus{
+    width:22px;height:22px;flex-shrink:0;border:1px solid var(--border-strong);border-radius:6px;
+    display:flex;align-items:center;justify-content:center;position:relative;transition:transform .3s ease;
+  }
+  .faq-q .plus::before,.faq-q .plus::after{content:'';position:absolute;background:var(--text-muted);}
+  .faq-q .plus::before{width:10px;height:1.4px;}
+  .faq-q .plus::after{width:1.4px;height:10px;transition:opacity .25s ease;}
+  .faq-item.open .plus::after{opacity:0;}
+  .faq-item.open .plus{transform:rotate(180deg);border-color:var(--yellow);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.16,.84,.44,1);}
+  .faq-a p{padding:0 24px 22px;color:var(--text-muted);font-size:14.5px;max-width:620px;}
+
+  /* ===== Contact ===== */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  @media(max-width:800px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-card{padding:28px;display:flex;flex-direction:column;gap:6px;}
+  .contact-card .icon-box{margin-bottom:14px;}
+  .contact-card .val{font-family:var(--font-mono);font-size:19px;color:var(--text);}
+  .contact-card .sub{font-size:13.5px;color:var(--text-dim);}
+
+  /* ===== Lead form ===== */
+  .form-panel{
+    max-width:760px;margin:0 auto;padding:44px;border-radius:22px;
+  }
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:640px){.form-grid{grid-template-columns:1fr;}}
+  .field{display:flex;flex-direction:column;gap:8px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:12.5px;color:var(--text-muted);font-family:var(--font-mono);letter-spacing:.03em;}
+  .field input, .field select, .field textarea{
+    background:rgba(15,23,42,0.025);border:1px solid var(--border);border-radius:10px;
+    padding:13px 14px;color:var(--text);font-size:14.5px;font-family:var(--font-body);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--blue-bright);background:rgba(47,111,237,0.04);
+  }
+  .field textarea{resize:vertical;min-height:96px;}
+  .form-note{font-size:12.5px;color:var(--text-dim);margin-top:16px;text-align:center;}
+  .form-success{
+    display:none;text-align:center;padding:40px 20px;
+  }
+  .form-success.show{display:block;}
+  .form-success .check{
+    width:56px;height:56px;border-radius:50%;background:rgba(47,111,237,0.15);border:1px solid var(--blue-bright);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 18px;
+  }
+
+  /* ===== Footer ===== */
+  footer{border-top:1px solid var(--border);padding:60px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:48px;}
+  @media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-grid h4{font-size:13px;color:var(--text-muted);margin-bottom:16px;letter-spacing:.04em;text-transform:uppercase;font-family:var(--font-mono);font-weight:500;}
+  .footer-grid ul li{margin-bottom:10px;}
+  .footer-grid ul a{font-size:14px;color:var(--text-dim);transition:color .2s;}
+  .footer-grid ul a:hover{color:var(--blue-bright);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;
+    padding-top:24px;border-top:1px solid var(--border);font-size:13px;color:var(--text-dim);
+  }
+
+  /* ===== WhatsApp floating button ===== */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:200;
+    width:60px;height:60px;border-radius:50%;
+    background:#1ea952;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(30,169,82,0.45);
+    animation:pulse 2.4s infinite;
+    transition:transform .2s ease;
+  }
+  .wa-float:hover{transform:scale(1.08);}
+  .wa-float svg{width:30px;height:30px;fill:#fff;}
+  @keyframes pulse{
+    0%{box-shadow:0 10px 30px rgba(30,169,82,0.45),0 0 0 0 rgba(30,169,82,0.5);}
+    70%{box-shadow:0 10px 30px rgba(30,169,82,0.45),0 0 0 16px rgba(30,169,82,0);}
+    100%{box-shadow:0 10px 30px rgba(30,169,82,0.45),0 0 0 0 rgba(30,169,82,0);}
+  }
+
+  :focus-visible{outline:2px solid var(--yellow-deep);outline-offset:3px;}
+</style>
+</head>
+<body>
+
+<div class="bg-fixed"></div>
+<div class="bg-grid"></div>
+<div class="trace-rail"><div class="line"></div><div class="progress" id="traceProgress"></div></div>
+
+<header id="siteHeader">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo"><span class="dot"></span>XMEGA</a>
+    <nav class="nav-links">
+      <a href="#why">Why XMEGA</a>
+      <a href="#categories">Categories</a>
+      <a href="#refer">Refer &amp; Earn</a>
+      <a href="#projects">Projects</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="phone-pill">📞 9049048982</span>
+      <a href="#lead-form" class="btn btn-primary">Get Started</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#why">Why XMEGA</a>
+    <a href="#categories">Categories</a>
+    <a href="#refer">Refer &amp; Earn</a>
+    <a href="#projects">Projects</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="#lead-form">Get Started</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner reveal in">
+        <div class="eyebrow">FINAL YEAR PROJECT SERVICES</div>
+        <a href="#refer" class="hero-refer-badge"><span class="tag">NEW</span> Refer &amp; Earn Program — get ₹500–₹1000 per referral <span class="arrow">→</span></a>
+        <h1>Turning <span class="hl">Ideas</span> Into <span class="hl2">Successful</span> Projects</h1>
+        <p class="lead" style="font-weight:600;color:var(--text);margin-bottom:8px;">We build and sell complete college projects — code, report, PPT &amp; viva support included.</p>
+        <p class="lead">XMEGA takes your final year project from blank page to working demo — real hardware, real code, real documentation, and a mentor on call until your viva is done.</p>
+        <div class="hero-ctas">
+          <a href="#lead-form" class="btn btn-primary">Get Your Project Started</a>
+          <a href="https://wa.me/919049048982" target="_blank" rel="noopener" class="btn btn-ghost">Chat on WhatsApp</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="num">300<span class="accent">+</span></div><div class="label">Projects delivered</div></div>
+          <div><div class="num">40<span class="accent">+</span></div><div class="label">Domains covered</div></div>
+          <div><div class="num">98<span class="accent">%</span></div><div class="label">Viva success rate</div></div>
+          <div><div class="num">24<span class="accent">/7</span></div><div class="label">Mentor support</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-float">
+      <div class="top"><span>BUILD STATUS</span><span>XM-014</span></div>
+      <div>Smart Attendance System</div>
+      <div class="bar"><span></span></div>
+      <div style="margin-top:8px;color:var(--text-dim);">92% · Report &amp; PPT ready</div>
+    </div>
+  </section>
+
+  <!-- 2. WHY CHOOSE XMEGA -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">WHY XMEGA</div>
+        <h2>Built to actually work — not just to submit</h2>
+        <p>We've sat on the other side of the viva table. Every part of the process is designed to make sure you can defend what you built.</p>
+      </div>
+      <div class="grid-3 stagger">
+        <div class="card feature-card reveal" style="--i:0">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Working Prototype Guarantee</h3>
+          <p>Every build is tested end-to-end on real hardware or a live deployment before it ever reaches you.</p>
+        </div>
+        <div class="card feature-card reveal" style="--i:1">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div>
+          <h3>Mentors Who've Shipped Real Work</h3>
+          <p>Guided by engineers with industry and research experience, not just people reading from a template.</p>
+        </div>
+        <div class="card feature-card reveal" style="--i:2">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5"/><path d="M9 13h6M9 17h6"/></svg></div>
+          <h3>Complete Documentation</h3>
+          <p>Synopsis, full report, PPT, and IEEE-format paper — formatted to your college's exact guidelines.</p>
+        </div>
+        <div class="card feature-card reveal" style="--i:3">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a4 4 0 0 0 4-4V6a4 4 0 0 0-8 0v5a4 4 0 0 0 4 4Z"/><path d="M19 11a7 7 0 0 1-14 0M12 19v3"/></svg></div>
+          <h3>Viva &amp; Demo Coaching</h3>
+          <p>A dedicated prep session before your defense, covering the exact questions panels tend to ask.</p>
+        </div>
+        <div class="card feature-card reveal" style="--i:4">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <h3>On-Time Delivery</h3>
+          <p>Your delivery date is fixed at kickoff and tracked in writing — no last-minute surprises before submission.</p>
+        </div>
+        <div class="card feature-card reveal" style="--i:5">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 6l2 13h14l2-13M8 6V4h8v2"/></svg></div>
+          <h3>Post-Delivery Support</h3>
+          <p>Free revisions and bug fixes until your project is formally accepted — we don't disappear after payment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. REFER & EARN -->
+  <section id="refer">
+    <div class="wrap">
+      <div class="refer-panel reveal">
+        <div class="refer-left">
+          <div class="eyebrow">REFER &amp; EARN</div>
+          <h2>Tell a Friend. Get Paid.</h2>
+          <p>If your friend buys a project from XMEGA because you told them about us, we pay you money. Simple as that — refer as many friends as you want, and get paid every time one of them buys.</p>
+          <div class="refer-amount">₹500–₹1000 <span>per successful referral</span></div>
+          <a href="https://wa.me/919049048982?text=Hi%20XMEGA%2C%20I'd%20like%20to%20refer%20a%20friend" target="_blank" rel="noopener" class="btn btn-yellow">Start Referring</a>
+          </div>
+        <div class="refer-right">
+          <div class="step-row"><div class="step-num">1</div><div><h4>Get your referral code</h4><p>WhatsApp Udayraj Pawar at 9049048982 and we'll send you a personal code in minutes.</p></div></div>
+          <div class="step-row"><div class="step-num">2</div><div><h4>Share it with a friend</h4><p>They mention your code when they enroll for their project.</p></div></div>
+          <div class="step-row"><div class="step-num">3</div><div><h4>Get paid when they buy</h4><p>As soon as your friend buys a project from us, ₹500–₹1000 lands in your account.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. PROJECT CATEGORIES -->
+  <section id="categories">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">PROJECT CATEGORIES</div>
+        <h2>Pick a domain, or let us help you choose</h2>
+        <p>Every category below is stocked with working builds, source code, and documentation ready to be customized to your brief.</p>
+      </div>
+      <div class="grid-cat stagger">
+        <div class="card cat-card reveal" style="--i:0">
+          <div class="code">// CAT-01</div>
+          <h3>AI &amp; Machine Learning</h3>
+          <div class="tags"><span class="tag">Python</span><span class="tag">TensorFlow</span><span class="tag">OpenCV</span></div>
+        </div>
+        <div class="card cat-card reveal" style="--i:1">
+          <div class="code">// CAT-02</div>
+          <h3>IoT &amp; Embedded Systems</h3>
+          <div class="tags"><span class="tag">Arduino</span><span class="tag">ESP32</span><span class="tag">Raspberry Pi</span></div>
+        </div>
+        <div class="card cat-card reveal" style="--i:2">
+          <div class="code">// CAT-03</div>
+          <h3>Web &amp; App Development</h3>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Flutter</span></div>
+        </div>
+        <div class="card cat-card reveal" style="--i:3">
+          <div class="code">// CAT-04</div>
+          <h3>Cybersecurity &amp; Networking</h3>
+          <div class="tags"><span class="tag">Kali</span><span class="tag">Wireshark</span><span class="tag">Cryptography</span></div>
+        </div>
+        <div class="card cat-card reveal" style="--i:4">
+          <div class="code">// CAT-05</div>
+          <h3>Mechanical &amp; Robotics</h3>
+          <div class="tags"><span class="tag">SolidWorks</span><span class="tag">ROS</span><span class="tag">CAD/CAM</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- 5. PROJECT SUGGESTION SERVICE -->
+  <section id="suggest">
+    <div class="wrap suggest-wrap">
+      <div class="reveal">
+        <div class="eyebrow">PROJECT SUGGESTION SERVICE</div>
+        <h2>Not sure what to build? We'll shortlist it for you.</h2>
+        <p style="color:var(--text-muted);margin-bottom:28px;">Tell us your branch, the tools you already know, and your timeline. Our mentors shortlist three project ideas matched to your skill level and college requirements — no generic downloads.</p>
+        <div class="step-row" style="margin-bottom:18px;"><div class="step-num">1</div><div><h4>Share your branch &amp; interests</h4><p>Two-minute form, no jargon required.</p></div></div>
+        <div class="step-row" style="margin-bottom:18px;"><div class="step-num">2</div><div><h4>Get 3 tailored ideas within 24 hrs</h4><p>Each with scope, tech stack, and rough timeline.</p></div></div>
+        <div class="step-row"><div class="step-num">3</div><div><h4>Pick one, we start scoping</h4><p>We move straight into planning once you confirm.</p></div></div>
+      </div>
+      <div class="card suggest-card reveal">
+        <div class="eyebrow" style="margin-bottom:20px;">TRY IT</div>
+        <div class="suggest-form-mini">
+          <div>
+            <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">Your branch</div>
+            <div class="chip-row" id="branchChips">
+              <span class="chip active">CSE / IT</span><span class="chip">ECE</span><span class="chip">Mechanical</span><span class="chip">Electrical</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size:13px;color:var(--text-muted);margin-bottom:10px;">Interest area</div>
+            <div class="chip-row" id="interestChips">
+              <span class="chip active">AI / ML</span><span class="chip">IoT</span><span class="chip">Web Dev</span><span class="chip">Security</span>
+            </div>
+          </div>
+          <div class="mini-out" id="suggestOut">Based on <b>CSE / IT</b> + <b>AI / ML</b> → we'd shortlist projects like face-recognition attendance, resume screening tools, and predictive health dashboards.</div>
+          <a href="#lead-form" class="btn btn-primary" style="justify-content:center;">Get My 3 Ideas</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FEATURED PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">FEATURED PROJECTS</div>
+        <h2>A few builds from the last batch</h2>
+        <p>A sample of recently delivered projects across domains — each shipped with full source code, report, and PPT.</p>
+      </div>
+      <div class="proj-scroll stagger">
+        <div class="card proj-card reveal" style="--i:0">
+          <div class="proj-thumb"><span class="code">XM-014</span></div>
+          <div class="proj-body">
+            <div class="domain">AI &amp; ML</div>
+            <h3>Smart Attendance System Using Face Recognition</h3>
+            <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Flask</span></div>
+          </div>
+        </div>
+        <div class="card proj-card reveal" style="--i:1">
+          <div class="proj-thumb"><span class="code">XM-027</span></div>
+          <div class="proj-body">
+            <div class="domain">IoT</div>
+            <h3>IoT-Based Smart Irrigation System</h3>
+            <div class="tags"><span class="tag">ESP32</span><span class="tag">Soil Sensors</span><span class="tag">Blynk</span></div>
+          </div>
+        </div>
+        <div class="card proj-card reveal" style="--i:2">
+          <div class="proj-thumb"><span class="code">XM-033</span></div>
+          <div class="proj-body">
+            <div class="domain">Web Dev</div>
+            <h3>Campus Grievance Redressal Portal</h3>
+            <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+          </div>
+        </div>
+        <div class="card proj-card reveal" style="--i:3">
+          <div class="proj-thumb"><span class="code">XM-041</span></div>
+          <div class="proj-body">
+            <div class="domain">Embedded</div>
+            <h3>Voice-Controlled Home Automation</h3>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Bluetooth</span><span class="tag">Android</span></div>
+          </div>
+        </div>
+        <div class="card proj-card reveal" style="--i:4">
+          <div class="proj-thumb"><span class="code">XM-052</span></div>
+          <div class="proj-body">
+            <div class="domain">Cybersecurity</div>
+            <h3>ML-Based Network Intrusion Detection</h3>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Wireshark</span><span class="tag">ML</span></div>
+          </div>
+        </div>
+        <div class="card proj-card reveal" style="--i:5">
+          <div class="proj-thumb"><span class="code">XM-058</span></div>
+          <div class="proj-body">
+            <div class="domain">Robotics</div>
+            <h3>Line-Following Robot with Obstacle Avoidance</h3>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">IR Sensors</span><span class="tag">L298N</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">FAQ</div>
+        <h2>Questions students usually ask</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-q">How long does a typical project take? <span class="plus"></span></div>
+          <div class="faq-a"><p>Most projects are delivered in 2–4 weeks depending on complexity. Timelines are agreed and fixed at kickoff, so you always know your delivery date up front.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">Do you provide source code and documentation? <span class="plus"></span></div>
+          <div class="faq-a"><p>Yes — every project ships with full commented source code, a synopsis, the final report, a presentation deck, and an IEEE-format paper where required.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">Can I request changes after delivery? <span class="plus"></span></div>
+          <div class="faq-a"><p>Yes. Revisions and bug fixes are included free of charge until your project is formally accepted by your evaluators.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">Do you help with viva and demo preparation? <span class="plus"></span></div>
+          <div class="faq-a"><p>Every project includes a dedicated prep session covering the questions your panel is most likely to ask, plus a run-through of your live demo.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">Can you match my college's specific formatting rules? <span class="plus"></span></div>
+          <div class="faq-a"><p>Yes — send us your college's format guide and we'll match the report, synopsis, and PPT to it exactly.</p></div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">Is remote support available for setup and testing? <span class="plus"></span></div>
+          <div class="faq-a"><p>Yes, most support happens over call and WhatsApp, including live screen-share sessions when you're setting up hardware or debugging code.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">CONTACT</div>
+        <h2>Talk to a project mentor today</h2>
+        <p>Call, WhatsApp, or drop your details below — we typically respond within the hour during working hours.</p>
+      </div>
+      <div class="contact-grid stagger">
+        <div class="card contact-card reveal" style="--i:0">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div class="val" style="color:var(--blue-bright);">Udayraj Pawar</div>
+          <div class="sub">9049048982 · Call or WhatsApp</div>
+        </div>
+        <div class="card contact-card reveal" style="--i:1">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div class="val" style="color:var(--blue-bright);">Mayur Borse</div>
+          <div class="sub">9021001481 · Call or WhatsApp</div>
+        </div>
+        <div class="card contact-card reveal" style="--i:2">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 7 8-7"/></svg></div>
+          <div class="val" style="font-size:16px;">xmega.info@gmail.com</div>
+          <div class="sub">General &amp; partnership enquiries</div>
+        </div>
+        <div class="card contact-card reveal" style="--i:3">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+          <div class="val" style="font-size:16px;">Pan-India</div>
+          <div class="sub">Remote &amp; on-campus support</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. LEAD GENERATION FORM -->
+  <section id="lead-form">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">GET STARTED</div>
+        <h2>Tell us about your project</h2>
+        <p>Fill this in and a mentor will call you back — usually within the hour.</p>
+      </div>
+      <div class="card form-panel reveal">
+        <form id="leadForm">
+          <div class="form-grid">
+            <div class="field"><label for="fname">Full name</label><input id="fname" type="text" placeholder="Your name" required></div>
+            <div class="field"><label for="fphone">Phone number</label><input id="fphone" type="tel" placeholder="10-digit mobile number" required pattern="[0-9]{10}"></div>
+            <div class="field"><label for="femail">Email</label><input id="femail" type="email" placeholder="you@college.edu" required></div>
+            <div class="field">
+              <label for="fdomain">Project domain</label>
+              <select id="fdomain" required>
+                <option value="">Select a domain</option>
+                <option>AI &amp; Machine Learning</option>
+                <option>IoT &amp; Embedded Systems</option>
+                <option>Web &amp; App Development</option>
+                <option>Cybersecurity &amp; Networking</option>
+                <option>Mechanical &amp; Robotics</option>
+                <option>Not sure yet — suggest one</option>
+              </select>
+            </div>
+            <div class="field full"><label for="fmsg">Tell us a bit more</label><textarea id="fmsg" placeholder="Branch, college, timeline, or any ideas you already have"></textarea></div>
+          </div>
+          <div style="margin-top:24px;">
+            <button type="submit" class="btn btn-primary" style="width:100%;">Request Free Consultation</button>
+          </div>
+          <p class="form-note">By submitting, you agree to be contacted by XMEGA via call or WhatsApp regarding your project.</p>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="check"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3 style="margin-bottom:8px;">Request received</h3>
+          <p style="color:var(--text-muted);">We've opened WhatsApp with your details filled in — just hit Send to reach our team. For anything urgent, call 9049048982.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo" style="margin-bottom:14px;"><span class="dot"></span>XMEGA</a>
+        <p style="color:var(--text-dim);font-size:14px;max-width:280px;">Turning Ideas Into Successful Projects — final year project services for engineering students across India.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#why">Why XMEGA</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#projects">Featured Projects</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="#refer">Refer &amp; Earn</a></li>
+          <li><a href="#suggest">Project Suggestion</a></li>
+          <li><a href="#lead-form">Get Started</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919049048982">Udayraj Pawar · 9049048982</a></li>
+          <li><a href="tel:+919021001481">Mayur Borse · 9021001481</a></li>
+          <li><a href="mailto:xmega.info@gmail.com">xmega.info@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 XMEGA. All rights reserved.</span>
+      <span>Made for students who'd rather build something real.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919049048982?text=Hi%20XMEGA%2C%20I'd%20like%20to%20know%20more%20about%20final%20year%20project%20services" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.44 5.13L2 22l5.13-1.34a9.87 9.87 0 0 0 4.9 1.3h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm5.8 14.07c-.24.68-1.4 1.3-1.93 1.37-.5.08-1.12.11-1.8-.11-.42-.13-.95-.3-1.63-.6-2.87-1.24-4.74-4.13-4.89-4.32-.14-.2-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.14.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.37-.42.5-.14.14-.29.29-.12.57.16.28.72 1.19 1.55 1.93 1.06.95 1.96 1.24 2.24 1.38.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.24.63-.14.26.09 1.66.78 1.94.93.28.14.47.21.54.33.07.12.07.7-.17 1.38Z"/></svg>
+</a>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('siteHeader');
+  const traceProgress = document.getElementById('traceProgress');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    traceProgress.style.height = pct + '%';
+  }, { passive: true });
+
+  // Mobile menu
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Scroll reveal (IntersectionObserver — Framer-Motion style entrance)
+  const revealEls = document.querySelectorAll('.reveal:not(.in)');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  revealEls.forEach(el => io.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Suggestion mini-tool chips
+  function wireChips(id) {
+    const wrap = document.getElementById(id);
+    wrap.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        wrap.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        updateSuggestion();
+      });
+    });
+  }
+  wireChips('branchChips');
+  wireChips('interestChips');
+
+  const suggestions = {
+    'AI / ML': 'face-recognition attendance, resume screening tools, and predictive health dashboards',
+    'IoT': 'smart irrigation, home automation hubs, and environment monitoring stations',
+    'Web Dev': 'campus portals, booking systems, and grievance redressal platforms',
+    'Security': 'intrusion detection systems, secure file-sharing tools, and phishing detectors'
+  };
+  function updateSuggestion() {
+    const branch = document.querySelector('#branchChips .chip.active').textContent;
+    const interest = document.querySelector('#interestChips .chip.active').textContent;
+    const out = document.getElementById('suggestOut');
+    out.innerHTML = `Based on <b>${branch}</b> + <b>${interest}</b> → we'd shortlist projects like ${suggestions[interest]}.`;
+  }
+
+  // Lead form submit — builds a pre-filled WhatsApp message to XMEGA's number.
+  // Note: this opens WhatsApp with the message ready to go; the visitor still
+  // needs to tap "Send" for it to actually reach 9049048982 (a plain static
+  // site can't push messages automatically without a backend/WhatsApp API).
+  const leadForm = document.getElementById('leadForm');
+  const XMEGA_WHATSAPP_NUMBER = '919049048982';
+
+  leadForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const domain = document.getElementById('fdomain').value.trim();
+    const msg = document.getElementById('fmsg').value.trim();
+
+    const lines = [
+      'New project enquiry from the XMEGA website:',
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email}`,
+      `Domain: ${domain || 'Not specified'}`,
+      msg ? `Message: ${msg}` : null
+    ].filter(Boolean);
+
+    const waText = encodeURIComponent(lines.join('\n'));
+    const waUrl = `https://wa.me/${XMEGA_WHATSAPP_NUMBER}?text=${waText}`;
+
+    window.open(waUrl, '_blank', 'noopener');
+
+    leadForm.style.display = 'none';
+    document.getElementById('formSuccess').classList.add('show');
+  });
+</script>
+
+</body>
+</html>
